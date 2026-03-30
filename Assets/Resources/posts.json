@@ -1,0 +1,31 @@
+{
+  "posts": [
+    {
+      "username": "tammyosolon",
+      "profilePic": "cat",
+      "place": "Holland, Rotterdam",
+      "image": "image1",
+      "tags": ["#amazing", "#travel", "#lifestyle"],
+      "caption": "Such a peaceful day!",
+      "content": "tammyosolon enjoying calm vibes with a simple walk around the city, capturing moments and feeling relaxed today."
+    },
+    {
+      "username": "Noahscnapp",
+      "profilePic": "noah",
+      "place": "Hawkins, Indiana",
+      "image": "stscene",
+      "tags": ["#stranger", "#netflix", "#series"],
+      "caption": "Something feels strange",
+      "content": "Noahscnapp walking through quiet streets thinking about strange events, hoping things stay normal but feeling unsure inside."
+    },
+    {
+      "username": "UpperEastQueen",
+      "profilePic": "blair",
+      "place": "Upper East Side",
+      "image": "blairscene",
+      "tags": ["#gossip", "#nyclife", "#drama"],
+      "caption": "Secrets never stay hidden",
+      "content": "UpperEastQueen stepping into another dramatic day in the city, where whispers travel fast and everyone watches closely."
+    }
+  ]
+}
