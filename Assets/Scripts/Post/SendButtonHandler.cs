@@ -4,10 +4,18 @@ using UnityEngine.UI;
 
 public class SendButtonHandler : MonoBehaviour
 {
-    public TMP_InputField inputField;
-    public Transform commentsContainer;
+    [SerializeField] private TMP_InputField inputField;
+    [SerializeField] private Transform commentsContainer;
     [SerializeField] private GameObject commentPrefab;
     [SerializeField] private GameObject postPrefab;
+
+    // Feed wale GameObject par ScrollRect hai; Content me posts spawn hoti hain.
+    // Post ke andar se upar jaake wahi ScrollRect milta hai — uska .content = posts ka parent (manual assign ki zaroorat nahi).
+    private RectTransform GetPostsFeedContent()
+    {
+        ScrollRect feedScroll = GetComponentInParent<ScrollRect>();
+        return feedScroll != null ? feedScroll.content : null;
+    }
     
     public void OnClickHandler()
     {
@@ -23,6 +31,9 @@ public class SendButtonHandler : MonoBehaviour
         
         LayoutRebuilder.ForceRebuildLayoutImmediate(commentPrefab.GetComponent<RectTransform>());
         LayoutRebuilder.ForceRebuildLayoutImmediate(postPrefab.GetComponent<RectTransform>());
+        RectTransform postsFeedContent = GetPostsFeedContent();
+        if (postsFeedContent != null)
+            LayoutRebuilder.ForceRebuildLayoutImmediate(postsFeedContent);
     }
     
 

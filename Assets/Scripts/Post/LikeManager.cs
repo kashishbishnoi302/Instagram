@@ -1,23 +1,25 @@
 using UnityEngine;
 using UnityEngine.UI;
+using Insta;
 public class LikeManager : MonoBehaviour
 {
-    private bool liked;
-
+    private bool _liked;
+    
     [SerializeField] private Button btn;
     [SerializeField] private Sprite likedImg;
     [SerializeField] private Sprite unlikedImg;    
     public void OnClickHandler()
     {
-        if (!liked)
+        if (!_liked)
         {
             btn.image.sprite = likedImg;
-            liked = true;
+            _liked = true;
+            LikeLogger.OnLikePressed();
         }
         else
         {
             btn.image.sprite = unlikedImg;
-            liked = false;
+            _liked = false;
         }
     }
 }
